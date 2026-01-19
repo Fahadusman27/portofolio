@@ -2,7 +2,7 @@ const menuToggle = document.getElementById("mobile-menu");
 const navList = document.getElementById("nav-list");
 
 // Buka/Tutup menu saat tombol hamburger diklik
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", (e) => {
   menuToggle.classList.toggle("active");
   navList.classList.toggle("active");
 });

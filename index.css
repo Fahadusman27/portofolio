@@ -75,6 +75,10 @@ header {
   animation: pulse-dot 2.6s ease-in-out infinite;
 }
 
+.mobile-chip {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -117,6 +121,11 @@ header {
   display: grid;
   gap: 1.5rem;
 }
+
+.hero .float-chip {
+  display: block;
+}
+
 .kick {
   color: var(--primary);
   font-weight: 600;
@@ -170,6 +179,39 @@ header {
   gap: 1.5rem;
   grid-template-columns: 1fr;
 }
+
+@media (max-width: 600px) {
+  /* Sembunyikan chip yang ada di badan halaman (Hero) */
+  .hero .float-chip {
+    display: none !important;
+  }
+
+  /* Pengaturan chip di dalam Navbar */
+  .mobile-chip {
+    display: inline-block !important;
+    position: static !important;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    
+    margin-left: 0.6rem;
+    margin-right: auto;
+    
+    animation: none;
+    white-space: nowrap;
+    border-radius: 4px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Elemen berjejer dari kiri */
+  }
+
+  .brand{
+    flex-shrink: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
