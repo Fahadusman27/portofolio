@@ -180,7 +180,7 @@ header {
   grid-template-columns: 1fr;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   /* Sembunyikan chip yang ada di badan halaman (Hero) */
   .hero .float-chip {
     display: none !important;
