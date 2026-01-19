@@ -319,7 +319,7 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-  .menu-toggle { display: flex; } /* Munculkan hamburger */
+  .menu-toggle { display: flex; }
 
   .menu {
     position: fixed;
