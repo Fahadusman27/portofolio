@@ -181,6 +181,7 @@ header {
 }
 
 @media (max-width: 400px) {
+  /* Sembunyikan chip yang ada di badan halaman (Hero) */
   .hero .float-chip {
     display: none !important;
   }
@@ -318,7 +319,7 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-  .menu-toggle { display: flex; }
+  .menu-toggle { display: flex; } /* Munculkan hamburger */
 
   .menu {
     position: fixed;
@@ -331,10 +332,6 @@ textarea {
     padding: 80px 20px;
     transition: 0.4s ease-in-out;
     box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-  }
-
-  .hero.float-chip {
-    display: none !important;
   }
 
   .menu.active {
