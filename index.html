@@ -13,14 +13,15 @@
   <body>
     <header aria-label="Main navigation">
       <div class="container nav">
-        <div class="brand">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span>Fahad Usman</span>
+        <div class="brand-wrapper">
+          <div class="brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span>Fahad Usman</span>
+          </div>
+          <span class="float-chip mobile-chip" aria-hidden="true"
+            >IT Student</span
+          >
         </div>
-
-        <span class="float-chip mobile-chip" aria-hidden="true"
-          >IT Student</span
-        >
 
         <button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu">
           <span></span>
@@ -39,25 +40,32 @@
 
     <main>
       <section class="container hero" aria-labelledby="title-hero">
-        <span class="float-chip" aria-hidden="true">IT Student</span>
-        <p class="kick">Halo, saya Fahad — Mahasiswa Teknologi Informasi</p>
-        <h1 id="title-hero" class="title">
-          Sedang mendalami arsitektur
-          <span style="color: var(--primary)">Backend</span> yang efisien.
-        </h1>
-        <p class="subtitle">
-          Fokus pada pengembangan logika server, manajemen database, dan
-          eksplorasi teknologi terbaru (PHP & Go).
-        </p>
-        <div class="actions" role="group" aria-label="Main actions">
-          <a class="button" href="#projects">Lihat Hasil Belajar</a>
-          <a class="button secondary" href="#contact">Ajak Diskusi</a>
+        <div class="hero-content">
+          <p class="kick">Halo, saya Fahad — Mahasiswa Teknologi Informasi</p>
+          <h1 id="title-hero" class="title">
+            Sedang mendalami arsitektur
+            <span style="color: var(--primary)">Backend</span> yang efisien.
+          </h1>
+          <p class="subtitle">
+            Fokus pada pengembangan logika server, manajemen database, dan
+            eksplorasi teknologi terbaru (PHP & Go).
+          </p>
+          <div class="actions" role="group" aria-label="Main actions">
+            <a class="button" href="#projects">Lihat Hasil Belajar</a>
+            <a class="button secondary" href="#contact">Ajak Diskusi</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <span class="float-chip" aria-hidden="true">IT Student</span>
+          <img src="image.png" alt="Fahad Usman" class="nav-profile-img" />
         </div>
       </section>
 
       <div class="divider" aria-hidden="true"></div>
 
       <section id="about" class="container" aria-labelledby="title-about">
+        <img src="image.png" alt="" />
         <h2 id="title-about" class="section-title">Tentang Saya</h2>
         <p class="section-desc">
           Saat ini saya adalah mahasiswa yang sangat tertarik dengan bagaimana
@@ -153,27 +161,39 @@
 
         <div class="grid grid-2">
           <article class="card">
-            <h3>Simple API Library</h3>
+            <h3>Tugas Kuliah Pengenalan Golang pada PostgreSQL</h3>
             <p class="muted">
-              Aplikasi pengelolaan data buku menggunakan PHP dan MySQL untuk
-              tugas pemrograman backend.
+              Pengembangan Sistem biasa untuk pengenalan Golang dengan cara kita
+              melakukan Clean arsitektur dengan repository menggunakan Go-Fiber.
             </p>
             <a
-              href="https://github.com/Fahadusman27"
+              href="https://github.com/Fahadusman27/Go-Postgresql"
               style="color: var(--primary); font-size: 0.9rem"
               >Lihat Kode →</a
             >
           </article>
           <article class="card">
-            <h3>Go Task Manager CLI</h3>
+            <h3>Sistem Pelaporan Prestasi Mahasiswa</h3>
             <p class="muted">
-              Eksperimen pertama menggunakan Golang untuk membuat aplikasi
-              pengelola tugas berbasis terminal.
+              pengembangan aplikasi back-end sistem pelaporan prestasi mahasiswa
+              yang memungkinkan mahasiswa melaporkan prestasi, dosen wali
+              memverifikasi, dan admin mengelola sistem secara keseluruhan.
             </p>
             <a
-              href="https://github.com/Fahadusman27"
+              href="https://github.com/Fahadusman27/uas-postgre"
               style="color: var(--primary); font-size: 0.9rem"
               >Lihat Kode →</a
+            >
+          </article>
+          <article class="card">
+            <h3>Webstime Blog</h3>
+            <p class="muted">
+              Yang dimana saya membuat Backend menggunakan Go-Fiber yang didalam nya memiliki fitur login,registrasi,crud,komen
+            </p>
+            <a
+              href="https://github.com/Fahadusman27/uas-postgre"
+              style="color: var(--primary); font-size: 0.9rem"
+              >Lihat Kode → (belum jadi total)</a
             >
           </article>
         </div>

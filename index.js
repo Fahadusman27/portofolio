@@ -22,8 +22,8 @@ window.addEventListener("click", (e) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 function kirimWA() {
-  const nama = document.getElementById("Fahad Usman").value;
-  const pesan = document.getElementById("Ada yang bisa di ba").value;
+  const nama = document.getElementById("nama").value;
+  const pesan = document.getElementById("pesan").value;
   const nomor = "6281317768135";
 
   const url = `https://wa.me/${nomor}?text=Halo Fahad, nama saya ${nama}. %0A%0A${pesan}`;
