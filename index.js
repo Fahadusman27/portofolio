@@ -1,31 +1,19 @@
-const menuToggle = document.getElementById("mobile-menu");
-const navList = document.getElementById("nav-list");
+      // Update Tahun Footer
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-// Buka/Tutup menu saat tombol hamburger diklik
-menuToggle.addEventListener("click", (e) => {
-  menuToggle.classList.toggle("active");
-  navList.classList.toggle("active");
-});
+      // Mobile Menu Logic
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
 
-// Fungsi untuk menutup menu (dipakai saat link diklik atau klik di luar menu)
-function closeMenu() {
-  menuToggle.classList.remove("active");
-  navList.classList.remove("active");
-}
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+      });
 
-// Tambahan: Menutup menu jika user mengklik area di luar menu dropdown
-window.addEventListener("click", (e) => {
-  if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
-    closeMenu();
-  }
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-function kirimWA() {
-  const nama = document.getElementById("nama").value;
-  const pesan = document.getElementById("pesan").value;
-  const nomor = "6281317768135";
-
-  const url = `https://wa.me/${nomor}?text=Halo Fahad, nama saya ${nama}. %0A%0A${pesan}`;
-  window.open(url, "_blank");
-}
+      // Menutup menu saat link diklik
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+        });
+      });
