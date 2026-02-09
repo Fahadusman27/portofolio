@@ -309,18 +309,18 @@
               </div>
             </div>
 
-            <form class="space-y-4" onsubmit="alert('Fitur ini hanya demo, silakan email langsung!'); return false;">
+            <form class="space-y-4" onsubmit="kirimWA(); return false;">
               <div>
-                <label class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Nama</label>
-                <input type="text" placeholder="Nama Anda" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
+                <label for="nama" class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Nama</label>
+                <input id="nama" type="text" placeholder="Nama Anda" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
               </div>
               <div>
                 <label class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Email</label>
-                <input type="email" placeholder="email@contoh.com" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
+                <input id="email" type="email" placeholder="email@contoh.com" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Pesan</label>
-                <textarea rows="4" placeholder="Tulis pesan anda..." class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required></textarea>
+                <label for="pesan" class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Pesan</label>
+                <textarea id="pesan" rows="4" placeholder="Tulis pesan anda..." class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required></textarea>
               </div>
               <button type="submit" class="w-full bg-gradient-to-r from-primary to-indigo-600 hover:to-indigo-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-indigo-500/25 transition-all transform hover:scale-[1.02]">
                 Kirim Pesan
