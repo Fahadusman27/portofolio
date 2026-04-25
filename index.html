@@ -3,343 +3,441 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | Fahad Usman - Backend Enthusiast</title>
+    <title>Fahad Usman // Creative Backend Engineer</title>
     <meta
       name="description"
-      content="Portfolio Mahasiswa IT yang berfokus pada pengembangan Backend menggunakan PHP, Go, dan MySQL."
+      content="Senior UI/UX Engineer & Creative Developer specializing in high-performance Backend architecture."
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              background: "#020617", // Slate 950
-              surface: "#0f172a", // Slate 900
-              primary: "#6366f1", // Indigo 500
-              secondary: "#0ea5e9", // Sky 500
-              accent: "#818cf8", // Indigo 400
+              zinc: {
+                950: "#09090b",
+              },
+              accent: "#bef264", // Lime 300
+              "accent-dark": "#a3e635", // Lime 400
             },
             fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            animation: {
-              "blob": "blob 7s infinite",
-              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
-            },
-            keyframes: {
-              blob: {
-                "0%": { transform: "translate(0px, 0px) scale(1)" },
-                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-                "100%": { transform: "translate(0px, 0px) scale(1)" },
-              },
-              fadeInUp: {
-                "0%": { opacity: "0", transform: "translateY(20px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              }
+              sans: ["Outfit", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
             },
           },
         },
       };
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #020617; }
-      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #475569; }
+      body { 
+        background-color: #09090b;
+        color: #a1a1aa;
+        font-family: 'Outfit', sans-serif;
+      }
       
-      .glass-card {
-        background: rgba(15, 23, 42, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+      .text-glow {
+        text-shadow: 0 0 20px rgba(190, 242, 100, 0.3);
+      }
+
+      .brutal-border {
+        border: 2px solid #27272a;
+        box-shadow: 4px 4px 0px 0px #27272a;
+      }
+
+      .brutal-border-accent {
+        border: 2px solid #bef264;
+        box-shadow: 6px 6px 0px 0px #bef264;
+      }
+
+      .noise-bg {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #09090b; }
+      ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #bef264; }
+
+      .stagger-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .stagger-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
-  <body class="bg-background text-slate-300 antialiased overflow-x-hidden selection:bg-primary selection:text-white">
-    
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
-      <div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-    </div>
+  <body class="antialiased overflow-x-hidden selection:bg-accent selection:text-zinc-950">
+    <div class="fixed inset-0 noise-bg pointer-events-none z-50"></div>
 
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4">
-      <div class="container mx-auto px-6">
-        <div class="glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-lg shadow-black/20">
-          <div class="flex items-center gap-3">
-            <div class="relative w-3 h-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-            </div>
-            <span class="font-bold text-white tracking-wide">Fahad Usman</span>
-            <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-semibold bg-primary/20 text-primary rounded-md border border-primary/20">IT Student</span>
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-40 px-6 py-8">
+      <div class="max-w-[1400px] mx-auto flex justify-between items-end">
+        <div class="group cursor-pointer">
+          <h1 class="text-zinc-100 font-extrabold text-2xl tracking-tighter leading-none group-hover:text-accent transition-colors">
+            FAHAD<span class="text-accent group-hover:text-zinc-100">USMAN</span>
+          </h1>
+          <p class="text-[10px] uppercase tracking-[0.3em] font-mono text-zinc-500 mt-1">Creative Engineer // 2024</p>
+        </div>
+
+        <nav class="hidden md:flex flex-col items-end gap-2">
+          <div class="flex gap-12 text-sm font-medium uppercase tracking-widest">
+            <a href="#about" class="text-zinc-400 hover:text-accent transition-colors">About</a>
+            <a href="#skills" class="text-zinc-400 hover:text-accent transition-colors">Skills</a>
+            <a href="#projects" class="text-zinc-400 hover:text-accent transition-colors">Work</a>
           </div>
+          <div class="h-[1px] w-32 bg-zinc-800"></div>
+        </nav>
 
-          <nav class="hidden md:flex items-center gap-8">
-            <a href="#about" class="text-sm font-medium hover:text-white transition-colors">Tentang</a>
-            <a href="#skills" class="text-sm font-medium hover:text-white transition-colors">Keahlian</a>
-            <a href="#projects" class="text-sm font-medium hover:text-white transition-colors">Proyek</a>
-            <a href="#contact" class="px-5 py-2 text-sm font-semibold text-white bg-primary hover:bg-indigo-600 rounded-full transition-all shadow-lg shadow-primary/25">
-              Hubungi Saya
-            </a>
-          </nav>
-
-          <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-6 right-6 glass-card rounded-2xl p-4 flex-col gap-4 shadow-xl border border-white/10">
-          <a href="#about" class="block py-2 text-center hover:text-white hover:bg-white/5 rounded-lg">Tentang</a>
-          <a href="#skills" class="block py-2 text-center hover:text-white hover:bg-white/5 rounded-lg">Keahlian</a>
-          <a href="#projects" class="block py-2 text-center hover:text-white hover:bg-white/5 rounded-lg">Proyek</a>
-          <a href="#contact" class="block py-2 text-center font-bold text-primary bg-primary/10 rounded-lg mt-2">Kontak</a>
-        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 brutal-border bg-zinc-900 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
       </div>
     </header>
 
-    <main class="pt-32 pb-20">
-      
-      <section class="container mx-auto px-6 min-h-[80vh] flex flex-col-reverse md:flex-row items-center gap-12">
-        <div class="flex-1 space-y-6 text-center md:text-left animate-fade-in-up">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-secondary text-xs font-medium">
-            <span>👋 Halo, saya Fahad</span>
-          </div>
-          <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Membangun arsitektur <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-purple-500">Backend</span> yang efisien.
-          </h1>
-          <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">
-            Fokus pada pengembangan logika server, manajemen database, dan eksplorasi teknologi terbaru (PHP & Go) untuk menciptakan sistem yang handal.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-            <a href="#projects" class="px-8 py-3.5 bg-white text-background font-bold rounded-full hover:bg-slate-200 transition-colors shadow-lg shadow-white/10">
-              Lihat Hasil Belajar
-            </a>
-            <a href="#contact" class="px-8 py-3.5 glass-card text-white font-medium rounded-full hover:bg-white/10 transition-colors border border-white/10">
-              Ajak Diskusi
-            </a>
-          </div>
-        </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-zinc-950 flex flex-col justify-center items-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
+      <button id="close-menu-btn" class="absolute top-8 right-6 p-2 brutal-border bg-zinc-900 text-accent">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <a href="#about" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">About</a>
+      <a href="#skills" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">Skills</a>
+      <a href="#projects" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">Work</a>
+      <a href="#contact" class="text-4xl font-extrabold text-accent hover:text-zinc-100 tracking-tighter uppercase">Contact</a>
+    </div>
 
-        <div class="flex-1 relative flex justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
-          <div class="relative w-64 h-64 md:w-80 md:h-80">
-            <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-40 animate-pulse"></div>
-            <img src="image.png" alt="Fahad Usman" class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl ring-2 ring-white/20" />
-            
-            <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-xl flex items-center gap-3 border border-white/10 shadow-xl">
-              <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span class="text-xs font-semibold text-white">Open to Work</span>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-24">
+        <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-8 stagger-in">
+            <div class="inline-block px-4 py-1 brutal-border text-xs font-mono text-accent mb-8 uppercase tracking-widest bg-zinc-900/50">
+              [ status: seeking_innovation ]
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="h-px w-full max-w-4xl mx-auto bg-gradient-to-r from-transparent via-slate-700 to-transparent my-12"></div>
-
-      <section id="about" class="container mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-12 gap-12">
-          <div class="md:col-span-5 hidden md:block relative">
-             <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl -rotate-6"></div>
-             <img src="image.png" alt="About" class="relative rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl border border-white/5 w-full object-cover h-[400px]" />
-          </div>
-          <div class="md:col-span-7 space-y-8">
-            <h2 class="text-3xl font-bold text-white flex items-center gap-3">
-              <span class="w-8 h-1 bg-primary rounded-full"></span>
-              Tentang Saya
+            <h2 class="text-5xl md:text-8xl lg:text-9xl font-extrabold text-zinc-100 leading-[0.85] tracking-tighter mb-8">
+              CRAFTING <br />
+              <span class="text-accent italic">ROBUST</span> <br />
+              FULLSTACK.
             </h2>
-            <p class="text-slate-400 leading-relaxed text-lg">
-              Saat ini saya merupakan mahasiswa yang memiliki ketertarikan tinggi terhadap pengembangan sistem dan cara kerja perangkat lunak di balik layar. Meskipun belum memiliki pengalaman kerja formal, saya aktif mengembangkan kemampuan melalui proyek mandiri dan tugas akademik.
+            <p class="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed font-light">
+              Designing efficient server architectures with <span class="text-zinc-100 font-medium">PHP</span> & <span class="text-zinc-100 font-medium">Go</span>. I don't just write code; I architect digital experiences that scale and survive.
             </p>
             
-            <div class="grid gap-4">
-              <div class="glass-card p-5 rounded-xl hover:bg-slate-800/50 transition-colors">
-                <h3 class="text-white font-semibold mb-1 text-lg">🎓 Pendidikan</h3>
-                <p class="text-sm text-slate-400">Mahasiswa D4 Teknik Informatika, fokus pada software engineering & praktik pemrograman.</p>
+            <div class="mt-12 flex flex-wrap gap-6 items-center">
+              <a href="#projects" class="px-10 py-4 bg-accent text-zinc-950 font-extrabold uppercase tracking-widest hover:translate-x-1 hover:-translate-y-1 transition-all brutal-border-accent">
+                View Archives
+              </a>
+              <a href="#contact" class="text-sm font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-accent transition-colors">
+                Initiate Contact _
+              </a>
+            </div>
+          </div>
+          
+          <div class="md:col-span-4 relative flex justify-center md:justify-end stagger-in" style="transition-delay: 0.2s;">
+             <div class="relative w-full max-w-[320px] aspect-[4/5] brutal-border rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden bg-zinc-900">
+                <img src="image.png" alt="Fahad Usman" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100" />
+                <div class="absolute inset-0 bg-accent/10 mix-blend-overlay pointer-events-none"></div>
+             </div>
+             <!-- Floating Element -->
+             <div class="absolute -bottom-6 -left-6 md:-left-12 p-6 bg-zinc-900 brutal-border hidden sm:block -rotate-6">
+                <p class="text-[10px] font-mono text-accent uppercase mb-1 tracking-tighter">Availability</p>
+                <p class="text-zinc-100 font-bold uppercase tracking-widest">Open for Hire</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: About -->
+      <section id="about" class="py-32 px-6 bg-zinc-900/30">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+          <div class="md:col-span-4 md:sticky md:top-32 stagger-in">
+             <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">01 // The Persona</h3>
+             <h2 class="text-4xl font-extrabold text-zinc-100 tracking-tighter">BEYOND THE <br />SYNTAX.</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-6 space-y-12 stagger-in" style="transition-delay: 0.1s;">
+            <p class="text-2xl md:text-3xl text-zinc-300 leading-tight font-light">
+              Student of Computer Science with a relentless obsession for <span class="text-accent underline decoration-2 underline-offset-8">Backend performance</span> and system integrity.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+              <div class="p-8 brutal-border bg-zinc-950/50 hover:bg-zinc-900 transition-colors">
+                <span class="text-accent font-mono text-xs mb-4 block">01.01</span>
+                <h4 class="text-zinc-100 font-bold uppercase tracking-widest mb-2">Philosophy</h4>
+                <p class="text-sm leading-relaxed text-zinc-500">I believe code should be as clean as it is functional. Minimalist architecture, maximum impact.</p>
               </div>
-              <div class="glass-card p-5 rounded-xl hover:bg-slate-800/50 transition-colors">
-                <h3 class="text-white font-semibold mb-1 text-lg">🚀 Etos Belajar</h3>
-                <p class="text-sm text-slate-400">Otodidak melalui dokumentasi resmi & referensi teknis untuk memperdalam teknologi.</p>
-              </div>
-              <div class="glass-card p-5 rounded-xl hover:bg-slate-800/50 transition-colors">
-                <h3 class="text-white font-semibold mb-1 text-lg">🎯 Tujuan Karier</h3>
-                <p class="text-sm text-slate-400">Mencari kesempatan magang untuk mengaplikasikan ilmu akademik ke dunia industri.</p>
+              <div class="p-8 brutal-border bg-zinc-950/50 hover:bg-zinc-900 transition-colors mt-8 sm:mt-0">
+                <span class="text-accent font-mono text-xs mb-4 block">01.02</span>
+                <h4 class="text-zinc-100 font-bold uppercase tracking-widest mb-2">Education</h4>
+                <p class="text-sm leading-relaxed text-zinc-500">D4 Informatics Engineering. Deep diving into data structures and algorithm optimization.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="container mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-white mb-4">Teknologi & Tools</h2>
-          <p class="text-slate-400">Tech-stack yang saya gunakan dalam perkuliahan dan proyek.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <article class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group">
-            <div class="w-12 h-12 bg-indigo-900/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
-              <span class="text-2xl">🐘</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">PHP Ecosystem</h3>
-            <p class="text-slate-400 text-sm mb-6">Dasar OOP, integrasi database, dan pembuatan RESTful API sederhana.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 text-xs bg-slate-800 text-indigo-300 rounded-full border border-indigo-900/30">PHP 8.x</span>
-              <span class="px-3 py-1 text-xs bg-slate-800 text-indigo-300 rounded-full border border-indigo-900/30">MVC</span>
-              <span class="px-3 py-1 text-xs bg-slate-800 text-indigo-300 rounded-full border border-indigo-900/30">Laravel</span>
-            </div>
-          </article>
-
-          <article class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group border-primary/30 shadow-[0_0_15px_rgba(99,102,241,0.1)]">
-            <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-              <span class="text-2xl">🐹</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Go (Golang)</h3>
-            <p class="text-slate-400 text-sm mb-6">Eksplorasi bahasa performa tinggi dan sistem konkuren (Goroutines).</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 text-xs bg-slate-800 text-cyan-300 rounded-full border border-cyan-900/30">Gin / Fiber</span>
-              <span class="px-3 py-1 text-xs bg-slate-800 text-cyan-300 rounded-full border border-cyan-900/30">Concurrency</span>
-            </div>
-          </article>
-
-          <article class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group">
-            <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-slate-700 transition-colors">
-              <span class="text-2xl">🗄️</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Database & Tools</h3>
-            <p class="text-slate-400 text-sm mb-6">Skema ERD, optimasi query, dan manajemen versi kode.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 text-xs bg-slate-800 text-slate-300 rounded-full border border-slate-700">MySQL / Postgres</span>
-              <span class="px-3 py-1 text-xs bg-slate-800 text-slate-300 rounded-full border border-slate-700">Git</span>
-              <span class="px-3 py-1 text-xs bg-slate-800 text-slate-300 rounded-full border border-slate-700">Postman</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="container mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-secondary pl-4">Proyek & Eksperimen</h2>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <article class="group relative overflow-hidden rounded-2xl bg-surface border border-slate-800 hover:border-slate-600 transition-all">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="p-8 relative z-10">
-              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Go PostgreSQL Clean Arch</h3>
-              <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                Sistem pengenalan Golang menerapkan Clean Architecture dengan repository pattern menggunakan framework Go-Fiber.
-              </p>
-              <a href="https://github.com/Fahadusman27/Go-Postgresql" target="_blank" class="inline-flex items-center text-sm font-semibold text-primary hover:text-white transition-colors">
-                Lihat Repository 
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="group relative overflow-hidden rounded-2xl bg-surface border border-slate-800 hover:border-slate-600 transition-all">
-             <div class="absolute inset-0 bg-gradient-to-r from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="p-8 relative z-10">
-              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-secondary transition-colors">Sistem Pelaporan Prestasi</h3>
-              <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                Aplikasi backend untuk pelaporan prestasi mahasiswa, verifikasi dosen wali, dan manajemen admin.
-              </p>
-              <a href="https://github.com/Fahadusman27/uas-postgre" target="_blank" class="inline-flex items-center text-sm font-semibold text-secondary hover:text-white transition-colors">
-                Lihat Repository
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="group relative overflow-hidden rounded-2xl bg-surface border border-slate-800 hover:border-slate-600 transition-all">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="p-8 relative z-10">
-              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Backend Webstime Blog</h3>
-              <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                Backend menggunakan Go-Fiber dengan fitur autentikasi (Login/Register), CRUD artikel, dan sistem komentar.
-              </p>
-              <a href="https://github.com/Fahadusman27/uas-postgre" target="_blank" class="inline-flex items-center text-sm font-semibold text-purple-400 hover:text-white transition-colors">
-                Lihat Kode (WIP)
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="https://github.com/Fahadusman27" target="_blank" class="inline-block px-6 py-2 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-white transition-all text-sm">
-            Lihat GitHub Selengkapnya →
-          </a>
-        </div>
-      </section>
-
-      <section id="contact" class="container mx-auto px-6 py-16">
-        <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-700/50">
-          <div class="grid md:grid-cols-2 gap-12">
+      <!-- Section: Skills -->
+      <section id="skills" class="py-32 px-6 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 stagger-in">
             <div>
-              <h2 class="text-3xl font-bold text-white mb-4">Hubungi Saya</h2>
-              <p class="text-slate-400 mb-8">
-                Saya terbuka untuk kesempatan magang, kolaborasi proyek, atau sekadar berbagi ilmu seputar Backend Engineering.
-              </p>
-              
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-primary">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="text-white font-medium">Email</h4>
-                    <p class="text-slate-400 text-sm">fahadunair12@gmail.com</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-primary">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  </div>
-                  <div>
-                    <h4 class="text-white font-medium">Lokasi</h4>
-                    <p class="text-slate-400 text-sm">Indonesia (Hybrid)</p>
-                  </div>
-                </div>
-              </div>
+              <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">02 // The Arsenal</h3>
+              <h2 class="text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tighter">TECHNOLOGY <br /> STACK.</h2>
             </div>
+            <p class="text-zinc-500 max-w-xs text-right font-mono text-[10px] uppercase leading-relaxed tracking-widest">
+              Continuously evolving. <br />Always optimizing.
+            </p>
+          </div>
 
-            <form class="space-y-4" onsubmit="kirimWA(); return false;">
-              <div>
-                <label for="nama" class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Nama</label>
-                <input id="nama" type="text" placeholder="Nama Anda" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
-              </div>
-              <div>
-                <label class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Email</label>
-                <input id="email" type="email" placeholder="email@contoh.com" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required>
-              </div>
-              <div>
-                <label for="pesan" class="block text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Pesan</label>
-                <textarea id="pesan" rows="4" placeholder="Tulis pesan anda..." class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600" required></textarea>
-              </div>
-              <button type="submit" class="w-full bg-gradient-to-r from-primary to-indigo-600 hover:to-indigo-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-indigo-500/25 transition-all transform hover:scale-[1.02]">
-                Kirim Pesan
-              </button>
-            </form>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-zinc-800 border-t stagger-in" style="transition-delay: 0.2s;">
+            <div class="group p-12 border-zinc-800 border-b md:border-r hover:bg-accent transition-all duration-500">
+              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🐘</span>
+              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">PHP / Laravel</h4>
+              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Developing robust MVC applications and complex REST APIs with enterprise-level security.</p>
+            </div>
+            <div class="group p-12 border-zinc-800 border-b md:border-r bg-zinc-900/20 hover:bg-accent transition-all duration-500">
+              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🐹</span>
+              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">Go (Golang)</h4>
+              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">High-performance microservices, concurrency patterns, and lightning-fast execution.</p>
+            </div>
+            <div class="group p-12 border-zinc-800 border-b hover:bg-accent transition-all duration-500">
+              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🗄️</span>
+              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">SQL / NoSQL</h4>
+              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Database design, query optimization, and complex data relationship management.</p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Section: Projects -->
+      <section id="projects" class="py-32 px-6 bg-zinc-100 text-zinc-950">
+        <div class="max-w-[1400px] mx-auto">
+          <div class="mb-24 flex flex-col md:flex-row items-center justify-between gap-8 stagger-in">
+            <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter leading-none">ARCHIVED <br />WORK_</h2>
+            <div class="text-right">
+               <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Total Repositories</p>
+               <p class="text-5xl font-extrabold italic">03</p>
+            </div>
+          </div>
+
+          <div class="space-y-32">
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group stagger-in">
+              <div class="md:col-span-7 bg-zinc-900 aspect-video overflow-hidden brutal-border border-zinc-950">
+                <div class="w-full h-full bg-zinc-800 flex items-center justify-center p-12">
+                   <div class="text-zinc-500 font-mono text-xl opacity-20 group-hover:opacity-100 transition-opacity"><img src="Blok.png" alt="GO_POSTGRES_CLEAN_ARCH"></div>
+                </div>
+              </div>
+              <div class="md:col-span-5 flex flex-col justify-center">
+                <span class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-[0.4em]">03.01 // Golang</span>
+                <h3 class="text-4xl font-extrabold tracking-tighter mb-6 group-hover:translate-x-2 transition-transform">GO CLEAN ARCHITECTURE FROM BACKEND WEB GO-BLOG</h3>
+                <p class="text-zinc-600 mb-8 leading-relaxed max-w-sm">Implementing enterprise patterns with Go-Fiber and PostgreSQL. A blueprint for scalable backend systems.</p>
+                <a href="https://github.com/Fahadusman27/Go-Postgresql" target="_blank" class="w-fit pb-2 border-b-2 border-zinc-950 font-bold uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-all">View Repository</a>
+              </div>
+            </article>
+
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group flex-row-reverse stagger-in">
+              <div class="md:col-span-5 md:col-start-1 flex flex-col justify-center text-left md:text-right md:items-end">
+                <span class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-[0.4em]">03.02 // LARAVEL Ecosystem</span>
+                <h3 class="text-4xl font-extrabold tracking-tighter mb-6 group-hover:-translate-x-2 transition-transform">CURAHAN HATI</h3>
+                <p class="text-zinc-600 mb-8 leading-relaxed max-w-sm">Comprehensive achievement reporting application for universities. Built for scale and transparency.</p>
+                <a href="https://github.com/Fahadusman27/uas-postgre" target="_blank" class="w-fit pb-2 border-b-2 border-zinc-950 font-bold uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-all">Source Code</a>
+              </div>
+              <div class="md:col-span-7 md:col-start-6 bg-zinc-900 aspect-video overflow-hidden brutal-border border-zinc-950 -rotate-2 group-hover:rotate-0 transition-transform">
+                <div class="w-full h-full bg-zinc-800 flex items-center justify-center p-12">
+                   <div class="text-zinc-500 font-mono text-xl opacity-20 group-hover:opacity-100 transition-opacity"><img src="front.png" alt="CURAHAN HATI"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Lab (The Diet Recommender) -->
+      <section id="lab" class="py-32 px-6 bg-zinc-900 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-5 stagger-in">
+              <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">04 // The Lab</h3>
+              <h2 class="text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tighter mb-8">NutriGA <br />Diet AI.</h2>
+              <p class="text-zinc-400 leading-relaxed mb-8">
+                An experimental implementation of a <span class="text-zinc-100">Genetic Algorithm</span> for personalized meal planning. Input your metrics, and let the evolution begin.
+              </p>
+              <div class="flex gap-4">
+                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">Python</div>
+                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">FastAPI</div>
+                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">Genetic Alg</div>
+              </div>
+            </div>
+
+            <div class="md:col-span-7 md:col-start-6 stagger-in" style="transition-delay: 0.2s;">
+              <div class="bg-zinc-950 brutal-border-accent p-8 md:p-12 relative">
+                <div class="absolute -top-4 -right-4 bg-accent text-zinc-950 px-4 py-1 font-mono text-xs font-extrabold uppercase tracking-tighter rotate-3">
+                  Live Preview
+                </div>
+                
+                <form id="nutrition-form" class="space-y-8">
+                  <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Weight (kg)</label>
+                      <input id="weight" type="number" placeholder="70" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Height (cm)</label>
+                      <input id="height" type="number" placeholder="175" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Age</label>
+                      <input id="age" type="number" placeholder="20" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Gender</label>
+                      <select id="gender" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-xl font-bold text-accent focus:outline-none focus:border-accent transition-colors appearance-none">
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Activity Level</label>
+                    <div id="activity-options" class="grid grid-cols-3 gap-2">
+                      <button type="button" data-value="sedentary" class="activity-btn p-4 brutal-border text-[10px] font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-colors">Sedentary</button>
+                      <button type="button" data-value="moderate" class="activity-btn p-4 brutal-border-accent bg-accent text-zinc-950 text-[10px] font-bold uppercase tracking-tighter">Moderate</button>
+                      <button type="button" data-value="active" class="activity-btn p-4 brutal-border text-[10px] font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-colors">Athlete</button>
+                    </div>
+                    <input type="hidden" id="activity_level" value="moderate">
+                  </div>
+
+                  <button type="submit" id="run-optimization" class="w-full py-6 bg-zinc-100 text-zinc-950 font-extrabold uppercase tracking-[0.5em] hover:bg-accent transition-all group overflow-hidden relative">
+                    <span class="relative z-10">Run Optimization</span>
+                    <div class="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                  </button>
+                </form>
+
+                <!-- Results Area -->
+                <div id="nutrition-results" class="mt-12 space-y-6 hidden">
+                  <div class="h-[1px] w-full bg-zinc-800"></div>
+                  <h4 class="text-accent font-mono text-xs uppercase tracking-widest">Evolution Results:</h4>
+                  <div id="results-content" class="grid grid-cols-1 gap-4">
+                    <!-- Results will be injected here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Contact -->
+
+      <section id="contact" class="py-48 px-6 bg-zinc-950">
+        <div class="max-w-[1400px] mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-24">
+            <div class="md:col-span-6 stagger-in">
+              <h2 class="text-6xl md:text-8xl font-extrabold text-zinc-100 tracking-tighter mb-12">LET'S <br /><span class="text-accent italic">SYNC</span>.</h2>
+              <div class="space-y-8">
+                 <a href="mailto:fahadunair12@gmail.com" class="block group">
+                    <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-zinc-500 mb-2 block group-hover:text-accent transition-colors">Direct Email</span>
+                    <span class="text-2xl md:text-3xl text-zinc-100 font-bold tracking-tight">fahadunair12@gmail.com</span>
+                 </a>
+                 <div class="block">
+                    <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-zinc-500 mb-2 block">Location</span>
+                    <span class="text-2xl md:text-3xl text-zinc-100 font-bold tracking-tight italic underline decoration-accent underline-offset-8">Indonesia // Remote</span>
+                 </div>
+              </div>
+            </div>
+            
+            <div class="md:col-span-6 stagger-in" style="transition-delay: 0.1s;">
+              <form class="space-y-6" onsubmit="kirimWA(); return false;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Identity</label>
+                    <input id="nama" type="text" placeholder="Your Name" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700" required>
+                  </div>
+                  <div class="space-y-2">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Electronic Mail</label>
+                    <input id="email" type="email" placeholder="email@domain.com" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700" required>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Message Buffer</label>
+                  <textarea id="pesan" rows="5" placeholder="What are we building?" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700 resize-none" required></textarea>
+                </div>
+                <button type="submit" class="w-full py-5 bg-accent text-zinc-950 font-extrabold uppercase tracking-[0.3em] hover:translate-x-1 hover:-translate-y-1 transition-all brutal-border-accent">
+                  Send Transmission
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="border-t border-slate-800 py-8 bg-black/20">
-      <div class="container mx-auto px-6 text-center">
-        <p class="text-slate-500 text-sm">
-          &copy; <span id="year"></span> | Dibuat dengan <span class="text-red-500">❤</span> dan semangat belajar oleh Fahad Usman
+    <footer class="py-12 px-6 border-t border-zinc-900 bg-zinc-950">
+      <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+          &copy; <span id="year"></span> // Engineered by Fahad Usman
         </p>
+        <div class="flex gap-8 text-[10px] font-mono uppercase tracking-widest">
+           <a href="https://github.com/Fahadusman27" target="_blank" class="text-zinc-600 hover:text-accent transition-colors">GitHub</a>
+           <a href="#" class="text-zinc-600 hover:text-accent transition-colors">LinkedIn</a>
+           <a href="#" class="text-zinc-600 hover:text-accent transition-colors">Twitter</a>
+        </div>
       </div>
     </footer>
 
     <script src="index.js"></script>
+    <script>
+      // Intersection Observer for stagger-in animation
+      const observerOptions = {
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.stagger-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('close-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+      });
+
+      // Close menu when a link is clicked
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenu.classList.remove('translate-x-0');
+        });
+      });
+    </script>
   </body>
 </html>
