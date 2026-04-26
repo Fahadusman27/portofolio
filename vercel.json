@@ -1,21 +1,13 @@
 {
-  "builds": [
-    {
-      "src": "ALGORITHMIC NUTRITION/main.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
+  "functions": {
+    "nutriga_backend/main.py": {
+      "runtime": "@vercel/python"
     }
-  ],
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/ALGORITHMIC NUTRITION/main.py"
+      "destination": "/nutriga_backend/main.py"
     }
   ]
 }

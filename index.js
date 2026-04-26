@@ -57,6 +57,6 @@ nutritionForm.addEventListener('submit', (e) => {
   localStorage.setItem('nutrition_payload', JSON.stringify(payload));
   
   // Redirect to results page
-  window.location.href = 'ALGORITHMIC NUTRITION/static/results.html';
+  window.location.href = 'nutriga_backend/static/results.html';
 });
 

@@ -253,12 +253,20 @@ form.addEventListener('submit', async (e) => {
 
   setLoading(true);
 
-  try {
+try {
     const response = await fetch('/api/v1/recommend-diet', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify(payload),
     });
+
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+       const textError = await response.text();
+       console.error("Vercel Error HTML:", textError);
+       showError(`Server Vercel Error (${response.status}). Cek Log Vercel!`);
+       return;
+    }
 
     const json = await response.json();
 

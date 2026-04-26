@@ -8,6 +8,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
+import sys
+
+# Ensure the current directory is in the python path for Vercel
+sys.path.append(os.path.dirname(__file__))
 
 from app.api.routes import router
 
