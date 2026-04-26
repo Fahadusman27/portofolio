@@ -1,0 +1,21 @@
+{
+  "builds": [
+    {
+      "src": "ALGORITHMIC NUTRITION/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "."
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/ALGORITHMIC NUTRITION/main.py"
+    }
+  ]
+}
