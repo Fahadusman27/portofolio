@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "nutriga_backend/main.py": {
-      "runtime": "@vercel/python"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "nutriga_backend/main.py"
+      "destination": "/api/index.py"
     }
   ]
 }
