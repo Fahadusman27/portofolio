@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fahad Usman // Creative Backend Engineer</title>
+    <title>Fahad Usman // Backend & Systems Engineer</title>
     <meta
       name="description"
-      content="Senior UI/UX Engineer & Creative Developer specializing in high-performance Backend architecture."
+      content="Portofolio Teknikal Fahad Usman. Backend & Systems Engineer berfokus pada Go, PHP/Laravel, dan arsitektur database terukur."
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -29,73 +29,41 @@
         },
       };
     </script>
-    <style>
-      body { 
-        background-color: #09090b;
-        color: #a1a1aa;
-        font-family: 'Outfit', sans-serif;
-      }
-      
-      .text-glow {
-        text-shadow: 0 0 20px rgba(190, 242, 100, 0.3);
-      }
-
-      .brutal-border {
-        border: 2px solid #27272a;
-        box-shadow: 4px 4px 0px 0px #27272a;
-      }
-
-      .brutal-border-accent {
-        border: 2px solid #bef264;
-        box-shadow: 6px 6px 0px 0px #bef264;
-      }
-
-      .noise-bg {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.03;
-      }
-
-      ::-webkit-scrollbar { width: 4px; }
-      ::-webkit-scrollbar-track { background: #09090b; }
-      ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: #bef264; }
-
-      .stagger-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .stagger-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased overflow-x-hidden selection:bg-accent selection:text-zinc-950">
-    <div class="fixed inset-0 noise-bg pointer-events-none z-50"></div>
+    <!-- Skip to Content for Keyboard Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-zinc-950 focus:font-bold">
+      Skip to content
+    </a>
 
-    <!-- Navigation -->
-    <header class="fixed top-0 left-0 w-full z-40 px-6 py-8">
-      <div class="max-w-[1400px] mx-auto flex justify-between items-end">
-        <div class="group cursor-pointer">
-          <h1 class="text-zinc-100 font-extrabold text-2xl tracking-tighter leading-none group-hover:text-accent transition-colors">
-            FAHAD<span class="text-accent group-hover:text-zinc-100">USMAN</span>
-          </h1>
-          <p class="text-[10px] uppercase tracking-[0.3em] font-mono text-zinc-500 mt-1">Creative Engineer // 2024</p>
-        </div>
-
-        <nav class="hidden md:flex flex-col items-end gap-2">
-          <div class="flex gap-12 text-sm font-medium uppercase tracking-widest">
-            <a href="#about" class="text-zinc-400 hover:text-accent transition-colors">About</a>
-            <a href="#skills" class="text-zinc-400 hover:text-accent transition-colors">Skills</a>
-            <a href="#projects" class="text-zinc-400 hover:text-accent transition-colors">Work</a>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-40 px-6 py-5 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/80">
+      <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+        <a href="#" class="group cursor-pointer block" aria-label="Fahad Usman Home">
+          <div class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 bg-accent inline-block animate-pulse"></span>
+            <span class="text-zinc-100 font-extrabold text-xl tracking-tighter leading-none group-hover:text-accent transition-colors">
+              FAHAD<span class="text-accent group-hover:text-zinc-100">USMAN</span>
+            </span>
           </div>
-          <div class="h-[1px] w-32 bg-zinc-800"></div>
+          <span class="text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 mt-1 block">Backend Systems // 2024</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-widest" aria-label="Main Navigation">
+          <a href="#about" class="text-zinc-300 hover:text-accent focus-visible:text-accent transition-colors py-1">About</a>
+          <a href="#skills" class="text-zinc-300 hover:text-accent focus-visible:text-accent transition-colors py-1">Stack</a>
+          <a href="#projects" class="text-zinc-300 hover:text-accent focus-visible:text-accent transition-colors py-1">Projects</a>
+          <a href="#lab" class="text-zinc-300 hover:text-accent focus-visible:text-accent transition-colors py-1">Lab</a>
+          <a href="#contact" class="px-4 py-2 bg-zinc-900 brutal-btn-dark text-accent hover:text-zinc-950 hover:bg-accent transition-colors">
+            Contact
+          </a>
         </nav>
 
-        <button id="mobile-menu-btn" class="md:hidden p-2 brutal-border bg-zinc-900 text-accent">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2.5 min-w-[44px] min-h-[44px] brutal-btn-dark bg-zinc-900 text-accent flex items-center justify-center" aria-label="Open navigation menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
           </svg>
         </button>
@@ -103,297 +71,412 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-zinc-950 flex flex-col justify-center items-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
-      <button id="close-menu-btn" class="absolute top-8 right-6 p-2 brutal-border bg-zinc-900 text-accent">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-zinc-950 flex flex-col justify-center items-center gap-8 translate-x-full transition-transform duration-300 md:hidden" aria-modal="true" role="dialog" aria-label="Mobile Navigation">
+      <button id="close-menu-btn" class="absolute top-6 right-6 p-3 min-w-[44px] min-h-[44px] brutal-btn-dark bg-zinc-900 text-accent flex items-center justify-center" aria-label="Close navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <a href="#about" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">About</a>
-      <a href="#skills" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">Skills</a>
-      <a href="#projects" class="text-4xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase">Work</a>
-      <a href="#contact" class="text-4xl font-extrabold text-accent hover:text-zinc-100 tracking-tighter uppercase">Contact</a>
+      <a href="#about" class="text-3xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase focus-visible:text-accent">About</a>
+      <a href="#skills" class="text-3xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase focus-visible:text-accent">Stack</a>
+      <a href="#projects" class="text-3xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase focus-visible:text-accent">Projects</a>
+      <a href="#lab" class="text-3xl font-extrabold text-zinc-100 hover:text-accent tracking-tighter uppercase focus-visible:text-accent">Lab</a>
+      <a href="#contact" class="text-3xl font-extrabold text-accent hover:text-zinc-100 tracking-tighter uppercase focus-visible:text-zinc-100">Contact</a>
     </div>
 
+    <main id="main-content">
+      <!-- Hero Section with Blueprint Texture -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20 relative grid-blueprint" aria-label="Introduction">
+        <!-- Blueprint Corner Technical Markers -->
+        <div class="absolute top-28 left-6 text-zinc-700 font-mono text-xs select-none hidden lg:block">+ ARCH_SPEC_V2.4</div>
+        <div class="absolute top-28 right-6 text-zinc-700 font-mono text-xs select-none hidden lg:block">LOC // ID_WIB +</div>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-24">
-        <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
           <div class="md:col-span-8 stagger-in">
-            <div class="inline-block px-4 py-1 brutal-border text-xs font-mono text-accent mb-8 uppercase tracking-widest bg-zinc-900/50">
-              [ status: seeking_innovation ]
+            <!-- Technical Status Tag with Live Jakarta Time -->
+            <div class="inline-flex items-center gap-3 px-3.5 py-1.5 brutal-box text-xs font-mono text-accent mb-8 uppercase tracking-widest bg-zinc-900/90">
+              <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+              <span>JKT <span id="live-clock">14:55:00 WIB</span> // AVAILABLE FOR ROLES</span>
             </div>
-            <h2 class="text-5xl md:text-8xl lg:text-9xl font-extrabold text-zinc-100 leading-[0.85] tracking-tighter mb-8">
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-zinc-100 leading-[0.88] tracking-tighter mb-8">
               CRAFTING <br />
               <span class="text-accent italic">ROBUST</span> <br />
-              FULLSTACK.
-            </h2>
-            <p class="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed font-light">
-              Designing efficient server architectures with <span class="text-zinc-100 font-medium">PHP</span> & <span class="text-zinc-100 font-medium">Go</span>. I don't just write code; I architect digital experiences that scale and survive.
+              BACKEND.
+            </h1>
+
+            <p class="text-lg md:text-xl text-zinc-300 max-w-xl leading-relaxed font-light">
+              Fahad Usman. Mahasiswa Teknik Informatika yang membangun arsitektur server berkecepatan tinggi dengan <span class="text-zinc-100 font-medium">Go</span> & <span class="text-zinc-100 font-medium">PHP/Laravel</span>. Berorientasi pada Clean Architecture, integritas transaksi SQL, dan latensi minimal.
             </p>
             
-            <div class="mt-12 flex flex-wrap gap-6 items-center">
-              <a href="#projects" class="px-10 py-4 bg-accent text-zinc-950 font-extrabold uppercase tracking-widest hover:translate-x-1 hover:-translate-y-1 transition-all brutal-border-accent">
-                View Archives
+            <div class="mt-10 flex flex-wrap gap-5 items-center">
+              <a href="#projects" class="px-8 py-4 min-h-[44px] inline-flex items-center justify-center bg-accent text-zinc-950 font-extrabold uppercase tracking-widest brutal-btn-accent text-sm">
+                View Repositories
               </a>
-              <a href="#contact" class="text-sm font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-accent transition-colors">
-                Initiate Contact _
+              <a href="#contact" class="px-7 py-4 min-h-[44px] inline-flex items-center justify-center bg-zinc-900 text-zinc-300 font-mono uppercase tracking-widest brutal-btn-dark text-xs hover:text-accent">
+                Direct Contact _
               </a>
             </div>
           </div>
           
-          <div class="md:col-span-4 relative flex justify-center md:justify-end stagger-in" style="transition-delay: 0.2s;">
-             <div class="relative w-full max-w-[320px] aspect-[4/5] brutal-border rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden bg-zinc-900">
-                <img src="image.png" alt="Fahad Usman" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100" />
+          <div class="md:col-span-4 relative flex justify-center md:justify-end stagger-in" style="transition-delay: 0.15s;">
+             <div class="relative w-full max-w-[320px] aspect-[4/5] brutal-box rotate-2 hover:rotate-0 transition-transform duration-300 overflow-hidden bg-zinc-900">
+                <img src="image.png" alt="Foto Fahad Usman" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500 scale-105 hover:scale-100" />
                 <div class="absolute inset-0 bg-accent/10 mix-blend-overlay pointer-events-none"></div>
              </div>
-             <!-- Floating Element -->
-             <div class="absolute -bottom-6 -left-6 md:-left-12 p-6 bg-zinc-900 brutal-border hidden sm:block -rotate-6">
-                <p class="text-[10px] font-mono text-accent uppercase mb-1 tracking-tighter">Availability</p>
-                <p class="text-zinc-100 font-bold uppercase tracking-widest">Open for Hire</p>
+             <!-- Technical Badge -->
+             <div class="absolute -bottom-6 -left-4 md:-left-8 p-4 bg-zinc-950 brutal-box hidden sm:block -rotate-3">
+                <p class="text-[10px] font-mono text-accent uppercase tracking-tighter">Spec Focus</p>
+                <p class="text-zinc-100 font-bold uppercase tracking-wider text-xs">Microservices & SQL</p>
              </div>
           </div>
         </div>
       </section>
 
       <!-- Section: About -->
-      <section id="about" class="py-32 px-6 bg-zinc-900/30">
+      <section id="about" class="py-28 px-6 bg-zinc-900/30 border-y border-zinc-800" aria-label="About Me">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-          <div class="md:col-span-4 md:sticky md:top-32 stagger-in">
-             <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">01 // The Persona</h3>
-             <h2 class="text-4xl font-extrabold text-zinc-100 tracking-tighter">BEYOND THE <br />SYNTAX.</h2>
+          <div class="md:col-span-4 md:sticky md:top-28 stagger-in">
+             <span class="text-xs font-mono uppercase tracking-[0.4em] text-accent mb-3 block">01 // The Profile</span>
+             <h2 class="text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tighter">BEYOND THE <br />SYNTAX.</h2>
+             <div class="h-1 w-16 bg-accent mt-4"></div>
           </div>
-          <div class="md:col-span-7 md:col-start-6 space-y-12 stagger-in" style="transition-delay: 0.1s;">
-            <p class="text-2xl md:text-3xl text-zinc-300 leading-tight font-light">
-              Student of Computer Science with a relentless obsession for <span class="text-accent underline decoration-2 underline-offset-8">Backend performance</span> and system integrity.
+          <div class="md:col-span-7 md:col-start-6 space-y-10 stagger-in" style="transition-delay: 0.1s;">
+            <p class="text-2xl md:text-3xl text-zinc-200 leading-snug font-light">
+              Mahasiswa D4 Teknik Informatika dengan komitmen mendalam terhadap <span class="text-accent underline decoration-2 underline-offset-8">performa backend</span>, kejelasan domain model, serta keandalan database relasional.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-              <div class="p-8 brutal-border bg-zinc-950/50 hover:bg-zinc-900 transition-colors">
-                <span class="text-accent font-mono text-xs mb-4 block">01.01</span>
-                <h4 class="text-zinc-100 font-bold uppercase tracking-widest mb-2">Philosophy</h4>
-                <p class="text-sm leading-relaxed text-zinc-500">I believe code should be as clean as it is functional. Minimalist architecture, maximum impact.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div class="p-7 brutal-box bg-zinc-950/80 hover:bg-zinc-900 transition-colors">
+                <span class="text-accent font-mono text-xs mb-3 block">SPEC 01.01</span>
+                <h3 class="text-zinc-100 font-bold uppercase tracking-wider mb-2 text-base">Prinsip Rekayasa</h3>
+                <p class="text-sm leading-relaxed text-zinc-400">Kode backend harus mudah dirawat, terisolasi dalam *boundary* domain yang jelas, serta minim *overhead*. Fungsionalitas teruji lebih utama daripada dekorasi.</p>
               </div>
-              <div class="p-8 brutal-border bg-zinc-950/50 hover:bg-zinc-900 transition-colors mt-8 sm:mt-0">
-                <span class="text-accent font-mono text-xs mb-4 block">01.02</span>
-                <h4 class="text-zinc-100 font-bold uppercase tracking-widest mb-2">Education</h4>
-                <p class="text-sm leading-relaxed text-zinc-500">D4 Informatics Engineering. Deep diving into data structures and algorithm optimization.</p>
+              <div class="p-7 brutal-box bg-zinc-950/80 hover:bg-zinc-900 transition-colors">
+                <span class="text-accent font-mono text-xs mb-3 block">SPEC 01.02</span>
+                <h3 class="text-zinc-100 font-bold uppercase tracking-wider mb-2 text-base">Latar Belakang</h3>
+                <p class="text-sm leading-relaxed text-zinc-400">Pendidikan formal D4 Teknik Informatika. Berpengalaman menerapkan algoritma optimasi, query indexing, dan implementasi arsitektur bersih di Go dan PHP.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Skills -->
-      <section id="skills" class="py-32 px-6 overflow-hidden">
+      <!-- Section: Skills with Pure Vector SVGs -->
+      <section id="skills" class="py-28 px-6" aria-label="Technology Stack">
         <div class="max-w-[1400px] mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 stagger-in">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6 stagger-in">
             <div>
-              <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">02 // The Arsenal</h3>
+              <span class="text-xs font-mono uppercase tracking-[0.4em] text-accent mb-3 block">02 // The Stack</span>
               <h2 class="text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tighter">TECHNOLOGY <br /> STACK.</h2>
             </div>
-            <p class="text-zinc-500 max-w-xs text-right font-mono text-[10px] uppercase leading-relaxed tracking-widest">
-              Continuously evolving. <br />Always optimizing.
+            <p class="text-zinc-400 max-w-xs md:text-right font-mono text-xs uppercase leading-relaxed tracking-widest">
+              Peralatan teknis utama yang digunakan dalam pengembangan sistem backend.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-zinc-800 border-t stagger-in" style="transition-delay: 0.2s;">
-            <div class="group p-12 border-zinc-800 border-b md:border-r hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🐘</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">PHP / Laravel</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Developing robust MVC applications and complex REST APIs with enterprise-level security.</p>
+          <!-- Cards with Vector SVGs (No Generic Emojis) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 border-zinc-800 border-t stagger-in" style="transition-delay: 0.15s;">
+            
+            <!-- PHP / Laravel -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b md:border-r hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 6h6a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3H4V6z" />
+                  <path d="M4 12h5" />
+                  <path d="M4 18V6" />
+                  <path d="M14 18V6" />
+                  <path d="M14 12h4a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">PHP / Laravel</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Pembangunan aplikasi modular MVC, RESTful APIs, manajemen ORM Eloquent, dan autentikasi token/sesi.</p>
             </div>
-            <div class="group p-12 border-zinc-800 border-b md:border-r bg-zinc-900/20 hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🐹</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">Go (Golang)</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">High-performance microservices, concurrency patterns, and lightning-fast execution.</p>
+
+            <!-- Go / Golang -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b md:border-r bg-zinc-900/20 hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 7l8-4 8 4v10l-8 4-8-4V7z" />
+                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M12 3v9" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">Go (Golang)</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Microservices berkecepatan tinggi, clean architecture pada Go-Fiber, concurrency goroutine, dan latency rendah.</p>
             </div>
-            <div class="group p-12 border-zinc-800 border-b hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">⚡</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">JavaScript</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Crafting dynamic user experiences and complex frontend logic with modern ES6+ standards.</p>
+
+            <!-- JavaScript -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M16 8v8a2 2 0 0 1-2 2h-1" />
+                  <path d="M8 15a2 2 0 0 0 2 2h1" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">JavaScript</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Logika klien interaktif, manipulasi DOM modern, konsumsi REST API secara asynchronous, dan ES6+ standards.</p>
             </div>
             
-            <div class="group p-12 border-zinc-800 border-b md:border-r hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🟢</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">NodeJS</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Building scalable server-side runtimes and real-time event-driven architectures.</p>
+            <!-- Node.js -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b md:border-r hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2z" />
+                  <path d="M12 6.5l5 2.9v5.8l-5 2.9-5-2.9V9.4l5-2.9z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">Node.js</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Runtime asynchronous berbasis event loop, middleware API, integrasi serverless, dan tooling automasi.</p>
             </div>
-            <div class="group p-12 border-zinc-800 border-b md:border-r bg-zinc-900/20 hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">📊</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">PostgreSQL</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Managing complex relational data with advanced indexing and ACID compliance.</p>
+
+            <!-- PostgreSQL -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b md:border-r bg-zinc-900/20 hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">PostgreSQL</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Perancangan skema relasional, optimasi index B-tree, transaksi berstandar ACID, dan integritas data ketat.</p>
             </div>
-            <div class="group p-12 border-zinc-800 border-b hover:bg-accent transition-all duration-500">
-              <span class="text-4xl mb-8 block group-hover:scale-110 transition-transform">🐬</span>
-              <h4 class="text-2xl font-bold text-zinc-100 mb-4 group-hover:text-zinc-950 transition-colors uppercase tracking-tighter">MySQL</h4>
-              <p class="text-zinc-500 group-hover:text-zinc-900 transition-colors leading-relaxed">Optimizing high-traffic databases with efficient querying and reliable storage.</p>
+
+            <!-- MySQL -->
+            <div class="group p-8 md:p-10 border-zinc-800 border-b hover:bg-accent transition-all duration-200">
+              <div class="w-12 h-12 mb-6 flex items-center justify-center text-accent group-hover:text-zinc-950 transition-colors">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                  <circle cx="8" cy="6" r="2" fill="currentColor" />
+                  <circle cx="16" cy="12" r="2" fill="currentColor" />
+                  <circle cx="10" cy="18" r="2" fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-zinc-950 transition-colors uppercase tracking-tight">MySQL</h3>
+              <p class="text-zinc-400 group-hover:text-zinc-900 transition-colors leading-relaxed text-sm">Manajemen database skala produksi, optimasi query, foreign key profiling, dan skrip migrasi terstruktur.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Projects -->
-      <section id="projects" class="py-32 px-6 bg-zinc-100 text-zinc-950">
+      <!-- Section: Projects with Engineering Metadata -->
+      <section id="projects" class="py-28 px-6 bg-zinc-100 text-zinc-950" aria-label="Projects and Work">
         <div class="max-w-[1400px] mx-auto">
-          <div class="mb-24 flex flex-col md:flex-row items-center justify-between gap-8 stagger-in">
-            <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter leading-none">ARCHIVED <br />WORK_</h2>
-            <div class="text-right">
-               <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Total Repositories</p>
-               <p class="text-5xl font-extrabold italic">03</p>
+          <div class="mb-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 stagger-in">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-[0.3em] text-zinc-600 mb-2 block font-bold">Featured Archives</span>
+              <h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none">ARCHIVED <br />WORK_</h2>
+            </div>
+            <div class="text-left md:text-right border-l-2 md:border-l-0 md:border-r-2 border-zinc-950 pl-4 md:pr-4">
+               <p class="font-mono text-xs uppercase tracking-widest text-zinc-600 font-bold">Active Repositories</p>
+               <p class="text-5xl font-extrabold italic text-zinc-950">02</p>
             </div>
           </div>
 
-          <div class="space-y-32">
-            <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group stagger-in">
-              <div class="md:col-span-7 bg-zinc-900 aspect-video overflow-hidden brutal-border border-zinc-950">
-                <div class="w-full h-full bg-zinc-800 flex items-center justify-center p-12">
-                   <div class="text-zinc-500 font-mono text-xl opacity-20 group-hover:opacity-100 transition-opacity"><img src="Blok.png" alt="GO_POSTGRES_CLEAN_ARCH"></div>
-                </div>
+          <div class="space-y-28">
+            <!-- Project 1: Go Clean Architecture -->
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-10 group stagger-in" aria-label="Project: Go Clean Architecture">
+              <div class="md:col-span-7 bg-zinc-900 aspect-video overflow-hidden border-2 border-zinc-950 shadow-[6px_6px_0px_0px_#09090b] flex items-center justify-center p-6">
+                <img src="GO.png" alt="Diagram arsitektur Go Clean Architecture" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
               </div>
+              
               <div class="md:col-span-5 flex flex-col justify-center">
-                <span class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-[0.4em]">03.01 // Golang</span>
-                <h3 class="text-4xl font-extrabold tracking-tighter mb-6 group-hover:translate-x-2 transition-transform">GO CLEAN ARCHITECTURE FROM BACKEND WEB GO-BLOG</h3>
-                <p class="text-zinc-600 mb-8 leading-relaxed max-w-sm">Implementing enterprise patterns with Go-Fiber and PostgreSQL. A blueprint for scalable backend systems.</p>
-                <a href="https://github.com/Fahadusman27/Go-Postgresql" target="_blank" class="w-fit pb-2 border-b-2 border-zinc-950 font-bold uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-all">View Repository</a>
+                <span class="text-xs font-mono text-zinc-700 font-bold mb-2 uppercase tracking-[0.25em]">01 // Golang Ecosystem</span>
+                <h3 class="text-3xl lg:text-4xl font-extrabold tracking-tighter mb-4 text-zinc-950">GO CLEAN ARCHITECTURE BACKEND</h3>
+                
+                <p class="text-zinc-700 mb-6 leading-relaxed text-sm md:text-base">
+                  Implementasi pola arsitektur domain bersih menggunakan Go-Fiber dan PostgreSQL. Pemisahan tanggung jawab pada layer handler, usecase, dan repository untuk skalabilitas backend.
+                </p>
+
+                <!-- Engineering Spec Grid -->
+                <div class="grid grid-cols-2 gap-4 py-3 my-2 border-y border-zinc-300 text-xs font-mono text-zinc-800">
+                  <div>
+                    <span class="text-zinc-500 block uppercase text-[10px]">Framework</span>
+                    <span class="font-bold">Go-Fiber v2</span>
+                  </div>
+                  <div>
+                    <span class="text-zinc-500 block uppercase text-[10px]">Database</span>
+                    <span class="font-bold">PostgreSQL / SQL</span>
+                  </div>
+                </div>
+
+                <div class="pt-4">
+                  <a href="https://github.com/Fahadusman27/Go-Postgresql" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-zinc-950 text-zinc-100 font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center gap-3 border-2 border-zinc-950 shadow-[3px_3px_0px_0px_#71717a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                    <span>Inspect Repository</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
               </div>
             </article>
 
-            <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group flex-row-reverse stagger-in">
-              <div class="md:col-span-5 md:col-start-1 flex flex-col justify-center text-left md:text-right md:items-end">
-                <span class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-[0.4em]">03.02 // LARAVEL Ecosystem</span>
-                <h3 class="text-4xl font-extrabold tracking-tighter mb-6 group-hover:-translate-x-2 transition-transform">CURAHAN HATI</h3>
-                <p class="text-zinc-600 mb-8 leading-relaxed max-w-sm">Website Blog dimana untuk mengeluarkan semua curahan yang selama ini terimpan dan tanpa takut ketahuan oleh siapapun</p>
-                <br>
-                <p class="text-zinc-600 mb-8 leading-relaxed max-w-sm">Masih Dalam Pembuatan</p>
-                <a href="https://github.com/Fahadusman27/uas-postgrez" target="_blank" class="w-fit pb-2 border-b-2 border-zinc-950 font-bold uppercase tracking-widest text-sm hover:text-accent hover:border-accent transition-all">Source Code</a>
-              </div>
-              <div class="md:col-span-7 md:col-start-6 bg-zinc-900 aspect-video overflow-hidden brutal-border border-zinc-950 -rotate-2 group-hover:rotate-0 transition-transform">
-                <div class="w-full h-full bg-zinc-800 flex items-center justify-center p-12">
-                   <div class="text-zinc-500 font-mono text-xl opacity-20 group-hover:opacity-100 transition-opacity"><img src="front.png" alt="CURAHAN HATI"></div>
+            <!-- Project 2: Curahan Hati Blog -->
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-10 group flex-row-reverse stagger-in" aria-label="Project: Curahan Hati Blog">
+              <div class="md:col-span-5 md:col-start-1 flex flex-col justify-center text-left md:text-right md:items-end order-2 md:order-1">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-xs font-mono text-zinc-700 font-bold uppercase tracking-[0.25em]">02 // Laravel Ecosystem</span>
+                  <span class="px-2 py-0.5 text-[10px] font-mono uppercase bg-zinc-300 text-zinc-900 border border-zinc-500 font-bold">In Development</span>
                 </div>
+                
+                <h3 class="text-3xl lg:text-4xl font-extrabold tracking-tighter mb-4 text-zinc-950">CURAHAN HATI PLATFORM</h3>
+                
+                <p class="text-zinc-700 mb-6 leading-relaxed text-sm md:text-base">
+                  Aplikasi blog terdesentralisasi untuk berekspresi secara bebas tanpa kekhawatiran terhadap kebocoran identitas. Dirancang dengan proteksi privasi pengguna dan skema database relasional.
+                </p>
+
+                <!-- Engineering Spec Grid -->
+                <div class="grid grid-cols-2 gap-4 py-3 my-2 border-y border-zinc-300 text-xs font-mono text-zinc-800 w-full text-left">
+                  <div>
+                    <span class="text-zinc-500 block uppercase text-[10px]">Stack</span>
+                    <span class="font-bold">Laravel / PHP</span>
+                  </div>
+                  <div>
+                    <span class="text-zinc-500 block uppercase text-[10px]">Database</span>
+                    <span class="font-bold">PostgreSQL</span>
+                  </div>
+                </div>
+
+                <div class="pt-4">
+                  <a href="https://github.com/Fahadusman27/uas-postgrez" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-zinc-950 text-zinc-100 font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center gap-3 border-2 border-zinc-950 shadow-[3px_3px_0px_0px_#71717a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                    <span>Source Code</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="md:col-span-7 md:col-start-6 bg-zinc-900 aspect-video overflow-hidden border-2 border-zinc-950 shadow-[6px_6px_0px_0px_#09090b] flex items-center justify-center p-6 order-1 md:order-2">
+                <img src="front.png" alt="Tampilan antarmuka Curahan Hati" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Section: Lab (The Diet Recommender) -->
-      <section id="lab" class="py-32 px-6 bg-zinc-900 overflow-hidden">
+      <!-- Section: Lab (Diet Optimization Algorithm) -->
+      <section id="lab" class="py-28 px-6 bg-zinc-900 border-t border-zinc-800" aria-label="Laboratory Experiments">
         <div class="max-w-[1400px] mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
             <div class="md:col-span-5 stagger-in">
-              <h3 class="text-xs font-mono uppercase tracking-[0.5em] text-accent mb-4">04 // The Lab</h3>
-              <h2 class="text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tighter mb-8">NutriGA <br />Diet AI.</h2>
-              <p class="text-zinc-400 leading-relaxed mb-8">
-                An experimental implementation of a <span class="text-zinc-100">Genetic Algorithm</span> for personalized meal planning. Input your metrics, and let the evolution begin.
+              <span class="text-xs font-mono uppercase tracking-[0.4em] text-accent mb-3 block">04 // Experimental Lab</span>
+              <h2 class="text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tighter mb-6">NutriGA <br />Diet AI.</h2>
+              <p class="text-zinc-300 leading-relaxed mb-8 text-base">
+                Implementasi komputasi <span class="text-zinc-100 font-semibold">Algoritma Genetika</span> untuk memecahkan kombinasi nutrisi makro berdasarkan profil fisiologis individu. Masukkan metrik tubuh untuk memulai komputasi generasi.
               </p>
-              <div class="flex gap-4">
-                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">Python</div>
-                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">FastAPI</div>
-                 <div class="px-3 py-1 brutal-border text-[10px] font-mono text-zinc-500 uppercase">Genetic Alg</div>
+              
+              <div class="flex flex-wrap gap-3">
+                 <div class="px-3.5 py-1.5 brutal-box text-xs font-mono text-zinc-300 uppercase bg-zinc-950">Python 3.10</div>
+                 <div class="px-3.5 py-1.5 brutal-box text-xs font-mono text-zinc-300 uppercase bg-zinc-950">FastAPI</div>
+                 <div class="px-3.5 py-1.5 brutal-box text-xs font-mono text-accent uppercase bg-zinc-950">Genetic Evolution</div>
               </div>
             </div>
 
-            <div class="md:col-span-7 md:col-start-6 stagger-in" style="transition-delay: 0.2s;">
-              <div class="bg-zinc-950 brutal-border-accent p-8 md:p-12 relative">
-                <div class="absolute -top-4 -right-4 bg-accent text-zinc-950 px-4 py-1 font-mono text-xs font-extrabold uppercase tracking-tighter rotate-3">
-                  Live Preview
+            <div class="md:col-span-7 md:col-start-6 stagger-in" style="transition-delay: 0.15s;">
+              <div class="bg-zinc-950 brutal-box-accent p-8 md:p-10 relative">
+                <div class="flex justify-between items-center pb-6 mb-6 border-b border-zinc-800">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                    <span class="text-xs font-mono text-zinc-500 ml-2">nutriga_worker.py</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-accent uppercase tracking-widest bg-zinc-900 px-2.5 py-1 border border-zinc-800">Interactive</span>
                 </div>
                 
-                <form id="nutrition-form" class="space-y-8">
-                  <div class="grid grid-cols-2 gap-8">
+                <form id="nutrition-form" class="space-y-6" novalidate>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div class="space-y-2">
-                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Weight (kg)</label>
-                      <input id="weight" type="number" placeholder="70" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                      <label for="weight" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Weight (kg)</label>
+                      <input id="weight" type="number" min="20" max="250" placeholder="70" class="w-full bg-zinc-900 border-2 border-zinc-800 p-3.5 text-xl font-bold text-accent focus:border-accent focus:ring-2 focus:ring-accent transition-colors placeholder:text-zinc-700" required>
                     </div>
                     <div class="space-y-2">
-                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Height (cm)</label>
-                      <input id="height" type="number" placeholder="175" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                      <label for="height" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Height (cm)</label>
+                      <input id="height" type="number" min="80" max="250" placeholder="175" class="w-full bg-zinc-900 border-2 border-zinc-800 p-3.5 text-xl font-bold text-accent focus:border-accent focus:ring-2 focus:ring-accent transition-colors placeholder:text-zinc-700" required>
                     </div>
                   </div>
 
-                  <div class="grid grid-cols-2 gap-8">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div class="space-y-2">
-                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Age</label>
-                      <input id="age" type="number" placeholder="20" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-2xl font-bold text-accent focus:outline-none focus:border-accent transition-colors placeholder:opacity-20" required>
+                      <label for="age" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Age (years)</label>
+                      <input id="age" type="number" min="10" max="100" placeholder="21" class="w-full bg-zinc-900 border-2 border-zinc-800 p-3.5 text-xl font-bold text-accent focus:border-accent focus:ring-2 focus:ring-accent transition-colors placeholder:text-zinc-700" required>
                     </div>
                     <div class="space-y-2">
-                      <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Gender</label>
-                      <select id="gender" class="w-full bg-zinc-900 border-b-2 border-zinc-800 p-4 text-xl font-bold text-accent focus:outline-none focus:border-accent transition-colors appearance-none">
+                      <label for="gender" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Gender</label>
+                      <select id="gender" class="w-full bg-zinc-900 border-2 border-zinc-800 p-3.5 text-lg font-bold text-accent focus:border-accent focus:ring-2 focus:ring-accent transition-colors">
                         <option value="male">MALE</option>
                         <option value="female">FEMALE</option>
                       </select>
                     </div>
                   </div>
 
-                  <div class="space-y-4">
-                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Activity Level</label>
-                    <div id="activity-options" class="grid grid-cols-3 gap-2">
-                      <button type="button" data-value="sedentary" class="activity-btn p-4 brutal-border text-[10px] font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-colors">Sedentary</button>
-                      <button type="button" data-value="moderate" class="activity-btn p-4 brutal-border-accent bg-accent text-zinc-950 text-[10px] font-bold uppercase tracking-tighter">Moderate</button>
-                      <button type="button" data-value="active" class="activity-btn p-4 brutal-border text-[10px] font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-colors">Athlete</button>
+                  <div class="space-y-2.5">
+                    <label class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Activity Level</label>
+                    <div id="activity-options" class="grid grid-cols-3 gap-2.5">
+                      <button type="button" data-value="sedentary" class="activity-btn min-h-[44px] p-3 brutal-box text-xs font-mono font-bold uppercase tracking-tighter hover:bg-zinc-800 focus-visible:ring-2 focus-visible:ring-accent transition-colors">Sedentary</button>
+                      <button type="button" data-value="moderate" class="activity-btn min-h-[44px] p-3 brutal-box-accent bg-accent text-zinc-950 text-xs font-mono font-bold uppercase tracking-tighter focus-visible:ring-2 focus-visible:ring-accent">Moderate</button>
+                      <button type="button" data-value="active" class="activity-btn min-h-[44px] p-3 brutal-box text-xs font-mono font-bold uppercase tracking-tighter hover:bg-zinc-800 focus-visible:ring-2 focus-visible:ring-accent transition-colors">Active</button>
                     </div>
                     <input type="hidden" id="activity_level" value="moderate">
                   </div>
 
-                  <button type="submit" id="run-optimization" class="w-full py-6 bg-zinc-100 text-zinc-950 font-extrabold uppercase tracking-[0.5em] hover:bg-accent transition-all group overflow-hidden relative">
-                    <span class="relative z-10">Run Optimization</span>
-                    <div class="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                  <div id="form-error" class="hidden text-red-400 text-xs font-mono p-3 bg-red-950/40 border border-red-800" role="alert">
+                    Harap lengkapi semua parameter (berat, tinggi, umur) dengan nilai valid.
+                  </div>
+
+                  <button type="submit" id="run-optimization" class="w-full py-4 min-h-[48px] bg-accent text-zinc-950 font-extrabold uppercase font-mono tracking-widest brutal-btn-accent text-sm block">
+                    <span id="run-btn-text">Execute Genetic Algorithm</span>
                   </button>
                 </form>
-
-                <!-- Results Area -->
-                <div id="nutrition-results" class="mt-12 space-y-6 hidden">
-                  <div class="h-[1px] w-full bg-zinc-800"></div>
-                  <h4 class="text-accent font-mono text-xs uppercase tracking-widest">Evolution Results:</h4>
-                  <div id="results-content" class="grid grid-cols-1 gap-4">
-                    <!-- Results will be injected here -->
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Contact -->
-
-      <section id="contact" class="py-48 px-6 bg-zinc-950">
+      <!-- Section: Contact with Direct WhatsApp -->
+      <section id="contact" class="py-28 px-6 bg-zinc-950 border-t border-zinc-900" aria-label="Contact Information">
         <div class="max-w-[1400px] mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-24">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
             <div class="md:col-span-6 stagger-in">
-              <h2 class="text-6xl md:text-8xl font-extrabold text-zinc-100 tracking-tighter mb-12">LET'S <br /><span class="text-accent italic">SYNC</span>.</h2>
-              <div class="space-y-8">
-                 <a href="mailto:fahadunair12@gmail.com" class="block group">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-zinc-500 mb-2 block group-hover:text-accent transition-colors">Direct Email</span>
-                    <span class="text-2xl md:text-3xl text-zinc-100 font-bold tracking-tight">fahadunair12@gmail.com</span>
+              <span class="text-xs font-mono uppercase tracking-[0.4em] text-accent mb-3 block">05 // Transmission</span>
+              <h2 class="text-6xl md:text-8xl font-extrabold text-zinc-100 tracking-tighter mb-10">LET'S <br /><span class="text-accent italic">CONNECT</span>.</h2>
+              
+              <div class="space-y-6">
+                 <a href="mailto:fahadunair12@gmail.com" class="block group p-5 bg-zinc-900/60 brutal-box hover:border-accent transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400 mb-1 block group-hover:text-accent font-semibold">Direct Electronic Mail</span>
+                    <span class="text-xl md:text-2xl text-zinc-100 font-bold tracking-tight">fahadunair12@gmail.com</span>
                  </a>
-                 <div class="block">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-zinc-500 mb-2 block">Location</span>
-                    <span class="text-2xl md:text-3xl text-zinc-100 font-bold tracking-tight italic underline decoration-accent underline-offset-8">Indonesia // Remote</span>
+                 <div class="p-5 bg-zinc-900/60 brutal-box">
+                    <span class="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400 mb-1 block font-semibold">Base Location</span>
+                    <span class="text-xl md:text-2xl text-zinc-100 font-bold tracking-tight">Indonesia // UTC+7 (Jakarta)</span>
                  </div>
               </div>
             </div>
             
             <div class="md:col-span-6 stagger-in" style="transition-delay: 0.1s;">
-              <form class="space-y-6" onsubmit="kirimWA(); return false;">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <form class="space-y-5" onsubmit="kirimWA(event); return false;" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div class="space-y-2">
-                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Identity</label>
-                    <input id="nama" type="text" placeholder="Your Name" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700" required>
+                    <label for="nama" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Your Name</label>
+                    <input id="nama" type="text" placeholder="Nama Anda" class="w-full bg-zinc-900/80 brutal-box px-4 py-3.5 text-zinc-100 focus:border-accent focus:ring-2 focus:ring-accent transition-all placeholder:text-zinc-600 text-sm" required>
                   </div>
                   <div class="space-y-2">
-                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Electronic Mail</label>
-                    <input id="email" type="email" placeholder="email@domain.com" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700" required>
+                    <label for="email" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Your Email</label>
+                    <input id="email" type="email" placeholder="nama@email.com" class="w-full bg-zinc-900/80 brutal-box px-4 py-3.5 text-zinc-100 focus:border-accent focus:ring-2 focus:ring-accent transition-all placeholder:text-zinc-600 text-sm" required>
                   </div>
                 </div>
+
                 <div class="space-y-2">
-                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 ml-4">Message Buffer</label>
-                  <textarea id="pesan" rows="5" placeholder="What are we building?" class="w-full bg-zinc-900/50 brutal-border px-6 py-4 text-zinc-100 focus:outline-none focus:border-accent transition-all placeholder:text-zinc-700 resize-none" required></textarea>
+                  <label for="pesan" class="text-xs font-mono uppercase tracking-widest text-zinc-400 block font-semibold">Message</label>
+                  <textarea id="pesan" rows="4" placeholder="Tuliskan kebutuhan sistem, diskusi proyek, atau kolaborasi..." class="w-full bg-zinc-900/80 brutal-box px-4 py-3.5 text-zinc-100 focus:border-accent focus:ring-2 focus:ring-accent transition-all placeholder:text-zinc-600 resize-none text-sm" required></textarea>
                 </div>
-                <button type="submit" class="w-full py-5 bg-accent text-zinc-950 font-extrabold uppercase tracking-[0.3em] hover:translate-x-1 hover:-translate-y-1 transition-all brutal-border-accent">
-                  Send Transmission
+                
+                <div id="wa-error" class="hidden text-red-400 text-xs font-mono p-3 bg-red-950/40 border border-red-800" role="alert">
+                  Harap isi nama dan pesan sebelum mengirimkan transmisi.
+                </div>
+
+                <button type="submit" class="w-full py-4 min-h-[48px] bg-accent text-zinc-950 font-extrabold uppercase font-mono tracking-widest brutal-btn-accent text-sm">
+                  Send Message via WhatsApp
                 </button>
               </form>
             </div>
@@ -402,60 +485,22 @@
       </section>
     </main>
 
-    <footer class="py-12 px-6 border-t border-zinc-900 bg-zinc-950">
+    <!-- Engineering Footer -->
+    <footer class="py-10 px-6 border-t border-zinc-900 bg-zinc-950" role="contentinfo">
       <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-          &copy; <span id="year"></span> // Engineered by Fahad Usman
-        </p>
-        <div class="flex gap-8 text-[10px] font-mono uppercase tracking-widest">
-           <a href="https://github.com/Fahadusman27" target="_blank" class="text-zinc-600 hover:text-accent transition-colors">GitHub</a>
-           <a href="#" class="text-zinc-600 hover:text-accent transition-colors">LinkedIn</a>
-           <a href="#" class="text-zinc-600 hover:text-accent transition-colors">Twitter</a>
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-accent"></span>
+          <p class="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+            &copy; <span id="year"></span> Fahad Usman // Systems Engineered
+          </p>
+        </div>
+        <div class="flex items-center gap-6 text-xs font-mono uppercase tracking-widest">
+           <a href="https://github.com/Fahadusman27" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-accent focus-visible:text-accent transition-colors">GitHub</a>
+           <a href="mailto:fahadunair12@gmail.com" class="text-zinc-400 hover:text-accent focus-visible:text-accent transition-colors">Email</a>
         </div>
       </div>
     </footer>
 
-    <script src="index.js"></script>
-    <script>
-      // Intersection Observer for stagger-in animation
-      const observerOptions = {
-        threshold: 0.1
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.stagger-in').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Mobile Menu Logic
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const closeBtn = document.getElementById('close-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-      });
-
-      closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('translate-x-0');
-      });
-
-      // Close menu when a link is clicked
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('translate-x-full');
-          mobileMenu.classList.remove('translate-x-0');
-        });
-      });
-    </script>
+    <script src="index.js" defer></script>
   </body>
 </html>
