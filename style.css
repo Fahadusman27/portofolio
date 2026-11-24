@@ -1,106 +1,115 @@
 /* ==========================================================================
-   Base & Typography
+   Fahad Usman Portfolio - Custom Styles & Smooth Scroll Utilities
    ========================================================================== */
-body { 
-  background-color: #09090b;
-  color: #d4d4d8;
-  font-family: 'Outfit', sans-serif;
+
+/* Lenis Smooth Scroll Setup */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
 
-/* ==========================================================================
-   Tactile Brutalist Box & Button Mechanics
-   ========================================================================== */
-.brutal-box {
-  border: 2px solid #27272a;
-  box-shadow: 4px 4px 0px 0px #27272a;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-.brutal-box-accent {
-  border: 2px solid #bef264;
-  box-shadow: 5px 5px 0px 0px #bef264;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-.brutal-btn-accent {
-  border: 2px solid #bef264;
-  box-shadow: 4px 4px 0px 0px #bef264;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
-.brutal-btn-accent:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 6px 6px 0px 0px #bef264;
+html {
+  scroll-behavior: auto !important;
 }
 
-.brutal-btn-accent:active {
-  transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0px 0px #bef264;
+/* Custom Text Selection */
+::selection {
+  background-color: #4F46E5;
+  color: #ffffff;
 }
 
-.brutal-btn-dark {
-  border: 2px solid #27272a;
-  box-shadow: 3px 3px 0px 0px #27272a;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.12s ease;
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.brutal-btn-dark:hover {
-  border-color: #bef264;
-  color: #bef264;
-  box-shadow: 4px 4px 0px 0px #bef264;
+/* Bento Card Transitions */
+.bento-card {
+  will-change: transform, opacity, box-shadow;
 }
 
-.brutal-btn-dark:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px 0px #bef264;
+/* Subtle dot grid pattern */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* ==========================================================================
-   Engineering Blueprint Grid Pattern
-   ========================================================================== */
-.grid-blueprint {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(39, 39, 42, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(39, 39, 42, 0.25) 1px, transparent 1px);
+/* GSAP Word-by-Word Reveal */
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  margin-right: 0.26em;
+  padding-bottom: 0.08em;
 }
 
-/* ==========================================================================
-   Scrollbar Customization
-   ========================================================================== */
-::-webkit-scrollbar { 
-  width: 6px; 
-}
-
-::-webkit-scrollbar-track { 
-  background: #09090b; 
-}
-
-::-webkit-scrollbar-thumb { 
-  background: #27272a; 
-  border-radius: 2px; 
-}
-
-::-webkit-scrollbar-thumb:hover { 
-  background: #bef264; 
-}
-
-/* ==========================================================================
-   Subtle Stagger-In Transitions
-   ========================================================================== */
-.stagger-in {
+.word-reveal {
+  display: inline-block;
+  transform: translateY(115%) rotateZ(2deg);
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
-.stagger-in.visible {
+/* Desktop Floating Pill Morphing & Width Transition */
+#desktop-pill-container {
+  transition: max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              width 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease, 
+              background-color 0.3s ease,
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: max-width, width, transform;
+}
+
+#desktop-pill-container.is-collapsed {
+  max-width: 195px !important;
+  width: auto !important;
+  justify-content: center !important;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
+}
+
+#desktop-pill-container.is-collapsed:hover {
+  transform: translateY(-1px) scale(1.02);
+  border-color: #6366f1;
+  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.15), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+}
+
+#desktop-pill-container.is-collapsed #desktop-expanded-content {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#desktop-pill-container.is-expanded {
+  max-width: 56rem !important; /* max-w-4xl */
+  width: 100% !important;
+  justify-content: space-between !important;
+}
+
+#desktop-pill-container.is-expanded #desktop-expanded-content {
+  display: flex !important;
   opacity: 1;
-  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* ==========================================================================
-   Accessible Keyboard Focus Indicator (WCAG 2.1 AA)
-   ========================================================================== */
-:focus-visible {
-  outline: 2px solid #bef264 !important;
-  outline-offset: 3px !important;
+/* Mobile Bottom Tab Bar Safe Area (iOS Home Indicator) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #mobile-bottom-bar {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
 }
